@@ -65,3 +65,45 @@ else #if you need else if it is written as elsif
 end    
 
 puts "here is the string '#{user_input}'" #This is called string interpolation
+#### MODIFIER
+
+# If Modifier Form
+a=5
+b=0
+puts "One Liner" if a==5 and b==0
+
+# While Modifier Form
+times_2 =2 
+times_2 *=2 while times_2<100
+puts times_2  #Output => 128
+
+#In Ruby false and nil ovjects are false. Everyting else is true!
+
+=begin
+	Case Statement 
+2 "flavors"
+
+1. Similar to a serious of "if" statement
+2. Specify a target next to "case" and each "when" cclause is compared to target.
+
+. === is called the case equality operator because it is used in precisely in this case
+	
+=end
+
+name = 'Fisher' 
+case name # 2nd FLAVOR
+  when /fish/i then puts "Something is fishy here"
+  when 'Smith' then puts "Your name is Smith"
+end
+
+age=21
+
+case # 1ST FLAVOR
+  when age >= 21
+    puts "You can buy a drink" 
+  when 1 == 0 
+    puts "Written by a drunk programmer"  
+  else 
+    puts "Default condition"
+end 
+
