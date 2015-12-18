@@ -26,6 +26,41 @@ def by_three?(number)
     return number%3==0
 end
 
+#Methods names can end with ? , !(this has dangerous side effects though)
+
+def can_divide_by?(number)
+	return false if number.zero?
+	true
+end
+
+puts can_divide_by?(3)
+puts can_divide_by?(0)
+
+#Factorial Method!!!! and Methods can have default argumenents
+
+def factorial(n)
+	n==0? 1 : n*factorial(n-1) #if n equals to 0 return 1 otherwise return n*....
+end
+
+def factorial_by_default(n=5)
+	n==0? 1 : n*factorial_by_default(n-1)
+end
+
+puts factorial(5)
+puts factorial_by_default
+puts factorial_by_default(3)
+
+#SPLAT
+
+# *prefixes paramater inside method definition...can apply to middle paramater
+
+def max(one_param, *numbers, another)
+	#Variable length parameters passed in become an array
+	numbers.max
+end
+
+puts max("something", 7, 35, -3, "more")
+
 #Blocks: Nameless methods
 
 1.times do
