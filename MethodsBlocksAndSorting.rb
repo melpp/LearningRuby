@@ -59,15 +59,48 @@ def max(one_param, *numbers, another)
 	numbers.max
 end
 
-puts max("something", 7, 35, -3, "more")
+puts max("something", 7, 35, -3, "more") #output=>35
 
-#Blocks: Nameless methods
+##Blocks: Nameless methods
 
 1.times do
   puts "I'm a code block!"
 end
 
 1.times { puts "As am I!" }
+
+#Can accept arguments. Accepts parameters between | |
+5.times do |index|
+	if index > 0 #output => 1 2 3 4 #iterations are 0,1,2,3,4
+		puts index
+	end
+end
+
+2.times {|index| puts index if index>0} #output =>1
+
+#Explicit way to configure a block in a method-Use call method to call a blockway to configure a block in a method-
+# Use & in front of the last paramater
+def two_times_explicit (&i_am_a_block) 
+  return "No block" if i_am_a_block.nil? 
+  i_am_a_block.call 
+  i_am_a_block.call 
+end 
+
+puts two_times_explicit # => No block 
+two_times_explicit { puts "Hello"} # => Hello 
+                                   # => Hello 
+
+#Implicit way to configure a block in a method--Use yield to call block
+def two_times_implicit 
+  return "No block" unless block_given? 
+  yield 
+  yield 
+end 
+
+puts two_times_implicit { print "Hello "} # => Hello 
+										  # => Hello 
+puts two_times_implicit # => No block
+
 
 # method that capitalizes a word
 def capitalize(string) 
