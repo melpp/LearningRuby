@@ -1,3 +1,10 @@
+#Collection of object references (auto-expandable)
+#Indexed using [] oprator(method)
+#Can be indexed with negative numbers or ranges
+#Heterogeneous types allowed in the same array
+#Can use %w{str1 str2} for string array creation
+
+het_arr = [1, "two", :three] #Third one is symbol
 #Array of strings
 my_favorite_fruits = ["peach","cherry","melon"]
 print my_favorite_fruits[0]
