@@ -101,8 +101,6 @@ adjust_colors ({:foreground => "green"}) #Output => Foreground: green
 adjust_colors background: "yella" #Output => Background: yella
 adjust_colors :background => "magenta" #Output => Background: magenta
 
-##puts is a methot and you are passing aparameter which happens to be a hash
-
 a_hash = {:one =>"one"}
 puts a_hash #Output => {:one=>"one"}
 #but if we try to do it in one step, we will get a syntax error
@@ -110,7 +108,8 @@ puts {:one =>"one"} #Output is syntax error
 #Ruby gets confused an thinks { } is a block
 
 #To get around this -we canuse parenthesis
+##puts is a method and you are passing aparameter which happens to be a hash
 puts ({ :one => "one"})
- #or drop the {} altogether...
+ #or drop the {} altogether...Because it is the last method
  puts one: "one"
 
