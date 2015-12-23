@@ -71,11 +71,18 @@ puts "here is the string '#{user_input}'" #This is called string interpolation
 a=5
 b=0
 puts "One Liner" if a==5 and b==0
+puts 2+3 if true #output => 5
+puts 2+3 unless true #output => nil
 
 # While Modifier Form
 times_2 =2 
 times_2 *=2 while times_2<100
 puts times_2  #Output => 128
+
+# Ternary conditional expression
+# boolean ? Do this if true: Do this if false
+
+puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4." #output=> 3 is not less than 4.
 
 #In Ruby false and nil ovjects are false. Everyting else is true!
 
@@ -106,4 +113,18 @@ case # 1ST FLAVOR
   else 
     puts "Default condition"
 end 
+
+#One line case statements when/then
+
+puts "Hello there! Which language do you speak."
+greeting = gets.chomp.capitalize
+
+# Add your case statement below!
+
+case greeting
+when "English" then puts "Hello!"
+when "French" then puts "Bonjour!"
+when "German" then puts "Guten Tag!"
+when "Finnish" then puts "Haloo!"
+else puts "I don't know that language"
 
