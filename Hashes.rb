@@ -87,6 +87,31 @@ family_tree_19 = {oldest: "Jim", older: "Joe", younger:"Jack"}
 family_tree_19[:youngest]="Jeremy" 
 p family_tree_19 #Output => {:oldest=>"Jim", :older=>"Joe", :younger=>"Jack", :youngest=>"Jeremy"}
 
+# if we want to filter a hash for values that meet certain criteria? For that, we can use .select.
+movie_ratings = {
+  memento: 4.5,
+  primer: 3.5,
+  the_matrix: 5,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+good_movies = movie_ratings.select{|movie, rating| rating>3}
+
+#.each_key and .each_value methods
+
+movie_ratings.each_key {|k| puts k}
+#Output
+#the_matrix
+#truman_show
+#red_dawn
+#skyfall
+#alex_cross
+#uhf
+#lion_king
 #Named paramater "like" behavior
 
 def adjust_colors (props={foreground: "red", background: "white"})
