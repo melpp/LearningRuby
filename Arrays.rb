@@ -86,3 +86,12 @@ multi_d_array.each { |x| puts "#{x}" } #if I write "puts x" it will pring each e
 
 s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
 puts s[0][1] #output:swiss
+
+#nested iteration on multidimetional array
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+
+s.each do |sub_array|
+    sub_array.each do |element|
+        puts element
+    end
+end
