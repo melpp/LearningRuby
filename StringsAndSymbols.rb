@@ -46,9 +46,58 @@ end
 #Grab your umbrellas..
 
 #SYMBOLS are like highly optimized strings
+# We can think of them as a sort of name. Symbols are not strings.
+# "string" == :string # false
 # Guaranteed to be unigue and immutable
 # to string- to_s
-#from string to symbol to_sym
+#from string to symbol .to_sym or .intern
+# Symbols always start with a colon (:). They must be valid Ruby variable names, 
+# so the first character after the colon has to be a letter or underscore (_); after that, any combination of letters, numbers, and underscores is allowed.
+
+# .object_id method gets the ID of an object - it is how Ruby knows whether two objects are the exact same object.
+# Run the code in the editor to see that the two "strings" are actually different objects, whereas the :symbol is the same object listed twice.
+
+puts "string".object_id # =>70226150490980
+puts "string".object_id # =>70226150490840
+
+puts :symbol.object_id # => 771548
+puts :symbol.object_id # => 771548
+
+#Create symbol
+
+my_first_symbol=:firstSymbol
+
+#Symbols pop up in a lot of places in Ruby, but they're primarily used either as hash keys or for referencing method names.
+# Hash lookup is faster with symbols than the string keys
+symbol_hash = {
+  :one => 1,
+  :two => 2,
+  :three => 3,
+}
+
+#From strings to symbol with .to_sym
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols =[]
+strings.each do |s|
+    symbols.push(s.to_sym)
+end
+#From strings to symbol by .intern
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols =[]
+strings.each do |s|
+    symbols.push(s.intern)
+end
+# => This hash syntax is called hashed rocket style
+movies = { :JackieBrown=>"Quantin Tarantino" , 
+            :AntiChrist => "Lars Von Trier" }
+           
+#Here is new Hash syntax that changed in Ruby 1.9
+#Semi colon is at the end of the word and no hash rockets.That word is still symbol though
+movies = { JackieBrown:"Quantin Tarantino" , 
+          AntiChrist: "Lars Von Trier" }
+          
+# Hash lookup is faser with symbols than the string keys
+
 
 #Any object in ruby we can ask what are our methods and it will give us
 #the methods that this objects supports
