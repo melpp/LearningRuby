@@ -71,6 +71,8 @@ puts "here is the string '#{user_input}'" #This is called string interpolation
 a=5
 b=0
 puts "One Liner" if a==5 and b==0
+
+#In Ruby false and nil ovjects are false. Everyting else is true!
 puts 2+3 if true #output => 5
 puts 2+3 unless true #output => nil
 
@@ -84,7 +86,54 @@ puts times_2  #Output => 128
 
 puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4." #output=> 3 is not less than 4.
 
-#In Ruby false and nil ovjects are false. Everyting else is true!
+
+# What if we only want to assign a variable if it hasn't already been assigned? 
+#For this, we can use the conditional assignment operator: ||=. 
+#It's made up of the or (||) logical operator and the normal = assignment operator.
+
+favorite_book = nil
+puts favorite_book
+
+favorite_book ||= "Cat's Cradle"
+puts favorite_book #output => Cat's Cradle
+
+favorite_book ||= "Why's (Poignant) Guide to Ruby"
+puts favorite_book #output => Cat's Cradle
+
+favorite_book = "Why's (Poignant) Guide to Ruby"
+puts favorite_book #output => Why's (Poignant) Guide to Ruby
+
+#Implicit return...Ruby's methods will return the result of the last evaluated expression
+#It is ok if we don't use the return key.
+
+def multiple_of_three(n)
+  n % 3 == 0 ? "True" : "False"
+end
+
+#How || and && operators works. Ruby evalouate them  via short-circuit evaluation. 
+#That means that Ruby doesn't look at both expressions unless it has to. 
+
+def a
+  puts "A was evaluated!"
+  return true
+end
+
+def b
+  puts "B was also evaluated!"
+  return true
+end
+
+puts a || b # Output=>A was evaluated! /n true #did not need to check b to know hat result will be true
+puts "------"
+puts a && b #Needs to check both sides. Even after checking a, it could be still false or true depends on b.
+
+#Output
+#A was evaluated!
+#true
+#------
+#A was evaluated!
+#B was also evaluated!
+#true
 
 =begin
 	Case Statement 
