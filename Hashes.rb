@@ -66,6 +66,7 @@ end
 #key: color,  value: red
 #key: background,  value: Blue
 
+#What happens if you try to access a key that doesn't exist, though? It returns nil.
 #If you do not want your program to return nil for the 
 #value do not exist you can create hash like that: Hash.new(0)
 #Then default value will be 0 and it will be returned instead of nil
