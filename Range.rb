@@ -26,3 +26,16 @@ case age
      else puts "you are getting older"
 end
 #Output => Young at heart
+
+# .upto and .downto
+
+#.upto to print out specific range of values
+95.upto(100) { |num| print num, " " } #Output=> 95 96 97 98 99 100
+"L".upto("P") {|letter| puts letter}
+#Output
+#L
+#M
+#N
+#O
+#P
+
