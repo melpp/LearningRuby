@@ -39,10 +39,17 @@ end
 array = [1,2,3,4,5]
 #The variable name between | | can be anything you like: 
 #it's just a placeholder for each element of the object you're using .each on.
+#ruby includes for loops
 array.each do |x|  
   x += 10
   puts x
 end
+
+#Print only even numbers
+
+my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+my_array.each { |x| puts x if x%2 == 0 }
 
 # .times Iterator
 10.times {print "I love bacon"}
