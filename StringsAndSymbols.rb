@@ -11,6 +11,21 @@ puts double_quoted # output => ice cream
 
 #Interpolation
 
+#We can always use palin old + or << to add variable value to string
+
+favorite_things = ["Ruby", "espresso", "candy"]
+
+puts "A few of my favorite things:"
+
+favorite_things.each do |thing|
+  puts "I love " << thing << "!"
+end
+
+#but better way to write is with string interpolation
+favorite_things.each do |thing|
+  puts "I love #{thing}!"
+end
+
 def multiply (one, two)
 	"#{one} multiplied by #{two} equals #{one*two}"
 end
