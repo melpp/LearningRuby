@@ -24,11 +24,23 @@ p arr_words[2..4] #Output=> ["great", "day", "today!"]
 puts arr_words.join(',') #Output => what,a,great,day,today!
 
 #Modifying Arrays
-##Append: push or <<  push back of the array
+##Append: push or <<  push back of the array (add an element to the end of an array)
 ##Remove: pop or shift
 ## Set: []=method
 ##We can randomly pull elements out from large arrays with sample
 ## sort! reverse!
+
+alphabet = ["a", "b", "c"]
+alphabet.push("d") 
+#or
+alphabet = ["a", "b", "c"]
+alphabet<<("d") 
+
+caption = "A giraffe surrounded by "
+caption += "weezards!" 
+#or
+caption = "A giraffe surrounded by "
+caption << "weezards!"
 
 ##Stack, queue,...they all array. We can make arrays like them.
 
