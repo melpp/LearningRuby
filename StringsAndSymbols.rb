@@ -95,9 +95,19 @@ movies = { :JackieBrown=>"Quantin Tarantino" ,
 #Semi colon is at the end of the word and no hash rockets.That word is still symbol though
 movies = { JackieBrown:"Quantin Tarantino" , 
           AntiChrist: "Lars Von Trier" }
-          
-# Hash lookup is faser with symbols than the string keys
 
+#Call and Response
+#Symbols are awesome for referencing method names. 
+# .respond_to? takes a symbol and returns true if an ojbect can receive that method and false otherwise
+
+[1,2,3].respond_to?(:push) #returns true, since we can call .push on an array
+
+[1,2,3].respond_to?[:to_sym] #would return false, since we can't turn an array into a symbol
+
+age =26
+#Rather than checking to see if our age variable is an integer, check to see if it will .respond_to? the .next method. 
+#(.next will return the integer immediately following the integer it's called on, meaning 4.next will return 5.)
+ age.respond_to?(:next) #return true
 
 #Any object in ruby we can ask what are our methods and it will give us
 #the methods that this objects supports
