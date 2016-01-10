@@ -5,6 +5,17 @@
 #     .@x = @x || 5 will return 5 the first time and @x the next time???
 #Short form : @x||=5 same as above
 
+#Inheritance is the process by which one class takes on the attributes and methods of another, 
+#and it's used to express an is-a relationship. For example, a cartoon fox is a cartoon mammal, 
+#so a CartoonFox class could inherit from a CartoonMammal class. However, a Wizard is not an Elf , 
+#so it shouldn't inherit from the Elf class (even if they have a lot of magical attributes and methods in common). 
+#Instead, both Wizard and Elf could ultimately inherit from the same MagicalBeing class.
+#inheritance syntax:
+# class DerivedClass < BaseClass
+   # Some stuff!
+# end
+
+
 class Person
 	attr_reader :age
 	attr_accessor :name
