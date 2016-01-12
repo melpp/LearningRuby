@@ -89,7 +89,9 @@ symbol_hash = {
   :two => 2,
   :three => 3,
 }
-
+symbol_hash[:four]=4
+puts symbol_hash[:two]
+symbol_hash.delete(:two)
 #From strings to symbol with .to_sym
 strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
 symbols =[]
@@ -102,6 +104,7 @@ symbols =[]
 strings.each do |s|
     symbols.push(s.intern)
 end
+
 # => This hash syntax is called hashed rocket style
 movies = { :JackieBrown=>"Quantin Tarantino" , 
             :AntiChrist => "Lars Von Trier" }
