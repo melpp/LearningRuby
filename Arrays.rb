@@ -43,7 +43,9 @@ caption = "A giraffe surrounded by "
 caption << "weezards!"
 
 ##Stack, queue,...they all array. We can make arrays like them.
-
+m = (1..10).to_a
+m.select{|number| number.odd?} # displays all the odd numbers from the array
+m.each { |number| print number if number.odd?}
 #We want stack. (LIFO)
 stack =[]; stack << "one"; stack.push ("two")
 puts stack.pop #Output =>two #it actually deleted it
@@ -52,7 +54,10 @@ puts stack.pop #Output =>two #it actually deleted it
 queue=[]; queue.push "one"; queue.push"two"
 puts queue.shift #Output=>one #it actually deleted the one
                  #shits the first element out of an array
+queue.unshift("doors") #Output => ["doors", "two"]  adds the doors beginning of the array
+queue.pop; puts queue #=>Output=> doors removes the last item from the array 
 
+queue.uniq #Output => displays unique elements of an array
 a=[5,3,4,2].sort!.reverse!
 p a #Output => [5, 4, 3, 2]
 p a.sample(2) #2 random elements. Output=> [2, 5]
