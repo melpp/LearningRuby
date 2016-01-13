@@ -113,6 +113,20 @@ movie_ratings.each_key {|k| puts k}
 #uhf
 #lion_king
 #Named paramater "like" behavior
+books = {}
+books["Gravity's Rainbow"] = :splendid
+books["Portobello Witch"] = :quite_good
+books["40 rules of love"] = :splendid
+
+books.length #=>3
+books
+#=> {"Gravity's Rainbow"=>:splendid, "Portobello Witch"=>:quite_good, "40 rules of love"=>:splendid}
+
+#Counting up reviews
+ratings = Hash.new(0)
+books.values.each {|rate| ratings[rate]+=1]}
+ratings #=>{:splendid=>2, :quite_good=>1}
+
 
 def adjust_colors (props={foreground: "red", background: "white"})
  puts "Foreground: #{props[:foreground]}" if props[:foreground]
