@@ -56,3 +56,14 @@ end
 
 #Enviroment variables ???
 #puts ENV["EDITOR"] 
+
+def load_comics( path )
+  comics = {}
+  File.foreach(path) do |line|
+    name, url = line.split(': ')
+    comics[name] = url.strip #removes extra space around the url
+  end
+  comics
+end
+
+comics = load_­comics ( '/com­ics.txt')
